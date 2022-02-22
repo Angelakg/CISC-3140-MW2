@@ -1,18 +1,18 @@
 
 BEGIN{
-	FS = ","
-	printf("%5s %12s %12s %12s %12s\n" ,"car_id", "year", "car make", "car model", "total")
+	FS = ",";
+	#printf("%5s %12s %12s %12s %12s %12s\n" , "rank", "total", "car_id", "year", "car make", "car model");
 
 }
 
 NR>1{
-	for(i = 9; i < NF-1; i++){
+	for(i = 8; i <= NF; i++){
 		total +=$i;
 	}
-	printf("%5s %12s %12s %12s %12s\n", $7, $4, $5, $6, total);
+	printf("%5s %12s %12s %12s %12s\n", total, $7, $4, $5, $6);
 	total = 0;
 }
 
-END{
-	
+
+END{	
 }
