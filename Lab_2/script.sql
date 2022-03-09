@@ -4,7 +4,7 @@
 CREATE TABLE New_Cars(
 CAR_ID TEXT PRIMARY KEY,
 Year TEXT,
-Make TXT,
+Make TEXT,
 Model TEXT,
 Name TEXT,
 Email TEXT

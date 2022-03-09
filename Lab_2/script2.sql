@@ -47,3 +47,53 @@ SELECT ROWID, Car_ID, Year, Make, Model, Total FROM Temp;
 DROP TABLE Temp;
 DROP TABLE Ranked;
 ALTER TABLE Temp2 RENAME TO Ranked;
+
+
+
+
+.mode csv
+.output extract2.csv
+
+WITH common_table_expression AS 
+(SELECT * FROM Rank WHERE Make = ‘Acura’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Audi’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Bmw’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Chevy’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Chrysler’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Dodge’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Ford’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = 'Honda' ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Hyundai’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Infiniti’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Jeep’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Lexus’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Mazda’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Mercedes’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Mitsu’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Nissan’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ’Scion’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Subaru’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ’Toyota’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Volkswagen’ ORDER BY Total DESC Limit 3)
+Union all
+(SELECT * FROM Rank WHERE Make = ‘Volvo’ ORDER BY Total DESC Limit 3)
+
